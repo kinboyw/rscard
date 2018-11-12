@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS index</title>
+    <style>
+    .test{
+  margin-top:50px;
+  width:0px;
+  height:0px;
+  border-top:9px solid transparent;
+  border-right:9px solid red;
+  position:relative;
+
+}
+    .test:after{
+        content:" ";
+        width:12px;
+        height:12px;
+        border:0px solid transparent;
+        border-top:3px solid red;
+        border-radius:20px 0 0 0;
+
+    }
+</style>
+</head>
+<body>
+<div class="test"></div>
+</body>
+</html>
