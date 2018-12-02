@@ -42,6 +42,7 @@ li{
 .topNavBar nav > ul > li {
     float: left;
     margin-left: 35px;
+    position:relative;
 }
 
 .topNavBar nav > ul > li > a {
@@ -54,21 +55,30 @@ li{
     padding: 8px 5px;
     display: block;
 }
-
-.topNavBar nav > ul > li > a:hover {
-    border-bottom: 3px solid rgb(232, 103, 107);
-    transition:border-bottom 0.5s;
+.topNavBar nav > ul > li > .slider{
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:1%;
+    border-bottom:3px solid rgb(232, 103, 107);
+    visibility:hidden;
+    transition:width 0.5s;
+}
+.topNavBar nav > ul > li > a:hover + .slider {
+    visibility:visible;
+    width:100%;
 }
 
 .topNavBar {
-    margin-top: 25px;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+    background-color: rgba(0,0,0,0.5);
 }
 
 .topNavBar-inner {
+    margin: 10px 0;
     padding: 0 199px 0 199px;
 }
 
@@ -168,9 +178,9 @@ li{
 }
 .userCard a{
     display:inline-block;
-    width:40px;
+    width:60px;
     line-height:20px;
-    padding:10px 0;
+    padding:20px 0;
     border-radius:50%;
     margin:16px;
 }
@@ -367,4 +377,24 @@ section.portfolio>.works>.square:after{
     z-index: 0;
     position: absolute;
     background:linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.65) 100%)
+}
+footer.media a{
+    position:relative;
+    overflow: hidden;
+}
+footer.media .mask{
+    width:10px;
+    height:10px;
+    display:inline-block;
+    background-color:rgba(255, 255, 255, 0.3);
+    position:absolute;
+    margin-top:-5px;
+    margin-left:-5px;
+    border-radius:50%;
+    transition:transform 0.2s;
+    visibility:hidden;
+}
+footer.media a.active .mask{
+    transform:scale(10);
+    visibility:visible;
 }
