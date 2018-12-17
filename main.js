@@ -11,6 +11,15 @@ function init(){
     prop3.onclick = function() {
         portfolioBar.className = "bar state3"
       }
+    window.onscroll = function(){
+        console.log(scrollY);
+        if(scrollY > 60){
+            topNavBar.classList.add("scroll");
+        } 
+        if(scrollY <= 60){
+            topNavBar.classList.remove("scroll");
+        }
+    }
 
     var iconbtns = document.querySelectorAll('footer.media a');
     for(let i = 0;i<iconbtns.length;i++){

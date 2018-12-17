@@ -1,400 +1,84 @@
-*{
-    margin:0;
-    padding:0;
-}
-body {
-    background: #EFEFEF;
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-hr{
-    height:0;
-    border:none;
-    border-top:1px solid rgb(238,238,238);
-}
-h1,h2,h3,h4,h5,h6{
-    font-weight:normal;
-    margin:0;
-}
-li{
- list-style:none;
-}
-.clearfix::after {
-    content: "";
-    display: block;
-    clear: both;
-}
-
-.topNavBar nav {
-    float: right;
-}
-
-.topNavBar nav > ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.topNavBar nav > ul > li {
-    float: left;
-    margin-left: 35px;
-    position:relative;
-}
-
-.topNavBar nav > ul > li > a {
-    font-size: 13px;
-    color: rgba(255, 255, 255, 0.7);
-    text-decoration: none;
-    font-weight: bold;
-    border-top: 3px solid transparent;
-    border-bottom: 3px solid transparent;
-    padding: 8px 5px;
-    display: block;
-}
-.topNavBar nav > ul > li > .slider{
-    position:absolute;
-    bottom:0;
-    left:0;
-    width:1%;
-    border-bottom:3px solid rgb(232, 103, 107);
-    visibility:hidden;
-    transition:width 0.5s;
-}
-.topNavBar nav > ul > li > a:hover + .slider {
-    visibility:visible;
-    width:100%;
-}
-
-.topNavBar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgba(0,0,0,0.5);
-}
-
-.topNavBar-inner {
-    margin: 10px 0;
-    padding: 0 199px 0 199px;
-}
-
-.logo {
-    float: left;
-    font-size: 30px;
-    font-family: "微软雅黑";
-}
-
-.topNavBar .logo .rs {
-    color: rgb(232, 103, 107);
-    margin-right: 4px;
-}
-
-.topNavBar .logo .card {
-    color: #9a9da2;
-}
-
-.banner {
-    height: 515px;
-    background-image: url(./img/rs-cover.jpg);
-    background-position: center center;
-    background-size: cover;
-}
-
-.banner .mask {
-    height: 515px;
-    background-color: rgba(44, 51, 64, 0.8);
-}
-
-.userCard {
-    max-width: 930px;
-    margin-right: auto;
-    margin-left: auto;
-    background-color: #FFFF;
-    box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.58);
-}
-
-.userCard .welcome {
-    background-color: #e8676b;
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 1.1;
-    display: inline-block;
-    padding: 7px 12px;
-    position:relative;
-    color:white;
-}
-
-.userCard .welcome .triangle {
-    border: 10px solid transparent;
-    width: 0;
-    display:block;
-    border-left-color: #e8676b;
-    border-top-width: 0px;
-    border-right-width:0px;
-    position:absolute;
-    top:100%;
-    left:7px;
-}
-
-.userCard .picture{
-    float:left;
-}
-.userCard .text{
-    float:left;
-    margin-left:65px;
-    width:468px;
-}
-.userCard .text h1{
-    margin-top:25px;
-    margin-bottom:4px;
-}
-.userCard .text hr{
-    margin:22px 0;
-}
-.userCard .pictureAndText{
-    padding:60px 50px;
-}
-.userCard dl dt,
-.userCard dl dd{
-    float:left;
-    width:50%;
-    padding:5px 0;
-}
-.userCard dl dt{
-    width:30%;
-    font-weight:bold;
-}
-.userCard dl dd{
-    width:70%;
-    color:#9da0a7;
-}
-.userCard>footer.media{
-    background-color: #e8676b;
-    text-align: center;
-}
-.userCard a{
-    display:inline-block;
-    width:60px;
-    line-height:20px;
-    padding:20px 0;
-    border-radius:50%;
-    margin:16px;
-}
-.userCard a:hover{
-    background-color: rgb(208,92,96);
-}
-.userCard svg{
-    width:20px;
-    height:20px;
-    fill:white;
-    vertical-align: top;
-}
-a.download{
-    border:1px solid rgb(203,205,207);
-    display:block;
-    text-align:center;
-    font-size:15px;
-    font-weight:bold;
-    line-height:22px;
-    padding:16px 0;
-    width:288px;
-    background-color: rgb(239,239,239);
-    margin:37px auto;
-    margin-bottom:30px;
-    border-radius: 3px;
-    transition: box-shadow 0.3s; 
-}
-a.download:hover{
-    box-shadow: 0 4px 13px 0 rgba(0, 0, 0, 0.5);
-}
-main{
-    margin-top:-347px;
-}
-p.introduction{
-    max-width:930px;
-    margin:0 auto;
-    margin-bottom:25px;
-    text-align:center;
-    font-size:20px;
-    font-weight:300;
-    vertical-align:baseline;
-}
-section.skills,
-section.portfolio{
-    max-width:930px;
-    margin:0 auto;
-    margin-top:70px;
-}
-section.skills > h2,
-section.portfolio > h2 {
-    text-align:center;
-    color:#3d4451;
-    font-size:34px;
-    line-height:1.2;
-    font-weight:600;
-    height:40px;
-    margin:0 0 25px 0;
-}
-section.skills>ol{
-    background-color:white;
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
-    padding:40px 50px 20px 50px;
-}
-section.skills>ol>li{
- float:left;
- width:48%;
- box-sizing:border-box;
- padding-bottom:35px;
-}
-section.skills>ol>li:nth-child(even){
-    float:right;
-}
-section.skills>ol>li>h3{
-    font-size: 14px;
-    margin-bottom:5px;
-}
-section.skills>ol>li .progressBar{
-    height:5px;
-    border-radius:5px;
-    background-color: #f5cfd1;
-}
-section.skills>ol>li .progress{
-    height:100%;
-    width:70%;
-    border-radius:5px;
-    background-color: #e8676b;
-}
-section.portfolio{
-    text-align:center;
-}
-section.portfolio>nav{
-    text-align:center;
-    display:inline-block;
-    vertical-align:top;
-}
-section.portfolio>nav>ol{
-    display:inline-block;
-    vertical-align:top;
-}
-section.portfolio nav>ol>li{
-    float:left;
-    margin-left: 40px;
-    cursor:pointer;
-}
-section.portfolio>nav>ol>li:nth-child(1){
-    margin-left:0;
-}
-section.portfolio>nav>.bar{
-    width:100%;
-    height:5px;
-    margin-top:10px;
+*{ margin:0; padding:0; }
+body { background: #EFEFEF; }
+a { color: inherit; text-decoration: none; }
+hr{ height:0; border:none; border-top:1px solid rgb(238,238,238); }
+h1,h2,h3,h4,h5,h6{ font-weight:normal; margin:0; }
+li{ list-style:none; }
+.clearfix::after { content: ""; display: block; clear: both; }
+.topNavBar { position: fixed; top: 0; left: 0; width: 100%; color: rgba(255, 255, 255, 0.7); transition:all 0.75s; }
+.topNavBar.scroll{
+    color:#000;
     background-color: #fff;
-    border-radius:5px;
+    box-shadow: 0px 0px 30px 3px rgba(0,0,0,0.75);
+    z-index:10;
 }
-section.portfolio>nav>.bar>.bar-inner{
-    height:100%;
-    background-color: #e8676b;
-    border-radius:5px;
-    transition:all 0.5s;
-}
-section.portfolio>nav>.bar.state1>.bar-inner{
-    margin-left:0;
-    width:15%;
-}
-section.portfolio>nav>.bar.state2>.bar-inner{
-    margin-left:72px;
-    width:15%;
-}
-section.portfolio>nav>.bar.state3>.bar-inner{
-    margin-left:142px;
-    width:44%;
-}
-section.portfolio{
-    margin-bottom:100px;
-}
-section.portfolio>.works{
-    position:relative;
-    margin-top:30px;
-    height:600px;
-}
+.topNavBar-inner { margin: 10px 0; padding: 0 199px 0 199px; }
+.topNavBar nav { float: right; }
+.topNavBar nav > ul { list-style: none; margin: 0; padding: 0; }
+.topNavBar nav > ul > li { float: left; margin-left: 35px; position:relative; }
+.topNavBar nav > ul > li > a { font-size: 15px;  text-decoration: none; font-weight: bold; border-top: 3px solid transparent; border-bottom: 3px solid transparent; padding: 8px 5px; display: block; }
+.topNavBar nav > ul > li > .slider{ position:absolute; bottom:0; left:0; width:1%; border-bottom:3px solid rgb(232, 103, 107); visibility:hidden; transition:width 0.5s; }
+.topNavBar nav > ul > li > a:hover + .slider { visibility:visible; width:100%; }
+.topNavBar .logo { float: left; font-size: 30px; font-family: "微软雅黑"; }
+.topNavBar .logo .rs { color: rgb(232, 103, 107); margin-right: 4px; }
+.topNavBar .logo .card { color: #9a9da2; } 
+.banner { height: 515px; background-image: url(./img/rs-cover.jpg); background-position: center center; background-size: cover; }
+.banner .mask { height: 515px; background-color: rgba(44, 51, 64, 0.8); }
+.userCard { max-width: 930px; margin-right: auto; margin-left: auto; background-color: #FFFF; box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.58); }
+.userCard .welcome { background-color: #e8676b; font-size: 14px; font-weight: 700; line-height: 1.1; display: inline-block; padding: 7px 12px; position:relative; color:white; }
+.userCard .welcome .triangle { border: 10px solid transparent; width: 0; display:block; border-left-color: #e8676b; border-top-width: 0px; border-right-width:0px; position:absolute; top:100%; left:7px; }
+.userCard .picture{ float:left; }
+.userCard .text{ float:left; margin-left:65px; width:468px; }
+.userCard .text h1{ margin-top:25px; margin-bottom:4px; }
+.userCard .text hr{ margin:22px 0; }
+.userCard .pictureAndText{ padding:60px 50px; }
+.userCard dl dt,
+.userCard dl dd{ float:left; width:50%; padding:5px 0; }
+.userCard dl dt{ width:30%; font-weight:bold; }
+.userCard dl dd{ width:70%; color:#9da0a7; }
+.userCard>footer.media{ background-color: #e8676b; text-align: center; }
+.userCard a{ display:inline-block; width:60px; line-height:20px; padding:20px 0; border-radius:50%; margin:16px; }
+.userCard a:hover{ background-color: rgb(208,92,96); }
+.userCard svg{ width:20px; height:20px; fill:white; vertical-align: top; }
+a.download{ border:1px solid rgb(203,205,207); display:block; text-align:center; font-size:15px; font-weight:bold; line-height:22px; padding:16px 0; width:288px; background-color: rgb(239,239,239); margin:37px auto; margin-bottom:30px; border-radius: 3px; transition: box-shadow 0.3s; }
+a.download:hover{ box-shadow: 0 4px 13px 0 rgba(0, 0, 0, 0.5); }
+main{ margin-top:-347px; }
+p.introduction{ max-width:930px; margin:0 auto; margin-bottom:25px; text-align:center; font-size:20px; font-weight:300; vertical-align:baseline; } 
+section.skills,
+section.portfolio{ max-width:930px; margin:0 auto; margin-top:70px; }
+section.skills > h2,
+section.portfolio > h2 { text-align:center; color:#3d4451; font-size:34px; line-height:1.2; font-weight:600; height:40px; margin:0 0 25px 0; }
+section.skills>ol{ background-color:white; box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.5); padding:40px 50px 20px 50px; }
+section.skills>ol>li{ float:left; width:48%; box-sizing:border-box; padding-bottom:35px; }
+section.skills>ol>li:nth-child(even){ float:right; }
+section.skills>ol>li>h3{ font-size: 14px; margin-bottom:5px; }
+section.skills>ol>li .progressBar{ height:5px; border-radius:5px; background-color: #f5cfd1; }
+section.skills>ol>li .progress{ height:100%; width:70%; border-radius:5px; background-color: #e8676b; }
+section.portfolio{ text-align:center; }
+section.portfolio>nav{ text-align:center; display:inline-block; vertical-align:top; }
+section.portfolio>nav>ol{ display:inline-block; vertical-align:top; }
+section.portfolio nav>ol>li{ float:left; margin-left: 40px; cursor:pointer; }
+section.portfolio>nav>ol>li:nth-child(1){ margin-left:0; }
+section.portfolio>nav>.bar{ width:100%; height:5px; margin-top:10px; background-color: #fff; border-radius:5px; }
+section.portfolio>nav>.bar>.bar-inner{ height:100%; background-color: #e8676b; border-radius:5px; transition:all 0.5s; }
+section.portfolio>nav>.bar.state1>.bar-inner{ margin-left:0; width:15%; }
+section.portfolio>nav>.bar.state2>.bar-inner{ margin-left:72px; width:15%; }
+section.portfolio>nav>.bar.state3>.bar-inner{ margin-left:142px; width:44%; }
+section.portfolio{ margin-bottom:100px; }
+section.portfolio>.works{ position:relative; margin-top:30px; height:600px; }
 section.portfolio>.works>.big,
-section.portfolio>.works>.small {
-    position:absolute;
-    text-align:left;
-}
+section.portfolio>.works>.small { position:absolute; text-align:left; }
 section.portfolio>.works div.big,
-section.portfolio>.works div.small {
-    box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.75);
-    background-position:center center;
-    background-size:cover; 
-}
-section.portfolio>.works .subtitle{
-    position:absolute;
-    left:0;
-    bottom:0;
-    box-sizing:border-box;
-    width:100%;
-    padding:70px 20px 30px 20px;
-    color:white;
-}
-section.portfolio>.works h2.title{
-    margin-bottom:10px;
-    text-transform: uppercase;
-    font-weight:600;
-}
-section.portfolio>.works span.alias{
-    color:rgba(255, 255, 255, 0.5);
-    font-size:13px;
-    font-weight:400px;
-    line-height:1.1;
-    text-transform: uppercase;
-    text-shadow:0.01em 0.01em 0.01em #999999;
-}
-section.portfolio>.works>.big img{
-    filter:grayscale(1);
-}
-section.portfolio>.works>.small h2.title{
-    font-size:18px;    
-}
-section.portfolio>.works>.small span.alias{
-    font-size:11px;
-}
-section.portfolio>.works>.square:before{
-    height:100%;
-    background:rgba(0,0,0,0.1);
-}
-
+section.portfolio>.works div.small { box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.75); background-position:center center; background-size:cover; }
+section.portfolio>.works .subtitle{ position:absolute; left:0; bottom:0; box-sizing:border-box; width:100%; padding:70px 20px 30px 20px; color:white; }
+section.portfolio>.works h2.title{ margin-bottom:10px; text-transform: uppercase; font-weight:600; }
+section.portfolio>.works span.alias{ color:rgba(255, 255, 255, 0.5); font-size:13px; font-weight:400px; line-height:1.1; text-transform: uppercase; text-shadow:0.01em 0.01em 0.01em #999999; }
+section.portfolio>.works>.big img{ filter:grayscale(1); }
+section.portfolio>.works>.small h2.title{ font-size:18px;    }
+section.portfolio>.works>.small span.alias{ font-size:11px; }
+section.portfolio>.works>.square:before{ height:100%; background:rgba(0,0,0,0.1); }
 section.portfolio>.works>.square:before,
-section.portfolio>.works>.square:after{
-    content: '';
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    z-index: 0;
-    position: absolute;
-    background:linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.65) 100%)
-}
-footer.media a{
-    position:relative;
-    overflow: hidden;
-}
-footer.media .mask{
-    width:10px;
-    height:10px;
-    display:inline-block;
-    background-color:rgba(255, 255, 255, 0.3);
-    position:absolute;
-    margin-top:-5px;
-    margin-left:-5px;
-    border-radius:50%;
-    transition:transform 0.2s;
-    visibility:hidden;
-}
-footer.media a.active .mask{
-    transform:scale(10);
-    visibility:visible;
-}
+section.portfolio>.works>.square:after{ content: ''; left: 0; bottom: 0; width: 100%; z-index: 0; position: absolute; background:linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.65) 100%) }
+footer.media a{ position:relative; overflow: hidden; }
+footer.media .mask{ width:10px; height:10px; display:inline-block; background-color:rgba(255, 255, 255, 0.3); position:absolute; margin-top:-5px; margin-left:-5px; border-radius:50%; transition:transform 0.2s; visibility:hidden; } 
+footer.media a.active .mask{ transform:scale(10); visibility:visible; }
