@@ -20,7 +20,7 @@ function init(){
         }
     }
     window.onload = function(){
-        var time = Math.random()*5000;
+        var time = Math.random()*3000;
         setTimeout(() => {
             siteWelcome.classList.remove("active");
         }, time);
