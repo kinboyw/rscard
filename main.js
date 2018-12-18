@@ -12,13 +12,18 @@ function init(){
         portfolioBar.className = "bar state3"
       }
     window.onscroll = function(){
-        console.log(scrollY);
         if(scrollY > 60){
             topNavBar.classList.add("scroll");
         } 
         if(scrollY <= 60){
             topNavBar.classList.remove("scroll");
         }
+    }
+    window.onload = function(){
+        var time = Math.random()*5000;
+        setTimeout(() => {
+            siteWelcome.classList.remove("active");
+        }, time);
     }
 
     var iconbtns = document.querySelectorAll('footer.media a');
@@ -32,6 +37,7 @@ function init(){
             mask.style.top = top
             mask.style.left = left
             icon.classList.add('active')
+            console.log("iconbutton")
         })
         icon.addEventListener('transitionend',(e)=>{
             icon.classList.remove('active')
