@@ -10,12 +10,25 @@
   <link rel="stylesheet" href="./loading.css">
   <script src="//at.alicdn.com/t/font_896846_ww0wepiht6l.js"></script>
   <style type="text/css">
-    .icon {
-       width: 1em; height: 1em;
-       vertical-align: -0.15em;
-       fill: currentColor;
-       overflow: hidden;
+  .mobiNavi{
+    color:#fff;
+    display:none;
+    float:right;
+    top:0;
+    right:0;
+  }
+  @media(max-width:600px){
+      .topNavBar{
+        display:none;
+      }
+      .mobiNavi{
+        display:block;
     }
+    section.portfolio>.works .big{margin:0 auto}
+    section.portfolio>.works .small{top:600px;left:0;width:45%;height:275px;margin:0 auto;}
+    section.portfolio>.works .small:nth-of-type(2){top:600px;left:50%;width:45%;height:275px;margin:0 auto;}
+  }
+
 </style>
 </head>
 
@@ -23,6 +36,9 @@
   <div id="siteWelcome" class="siteWelcome active">
     <div class="loading">
   </div>
+  </div>
+  <div class="mobiNavi">
+    三
   </div>
   <div id="topNavBar" class="topNavBar">
     <div class="topNavBar-inner clearfix">
@@ -183,20 +199,20 @@
         </div>
       </nav>
       <div class="works">
-        <div class="big square" style="width:600px;height:567px;background-image:url('img/port1.jpg')">
+        <div class="big square" style="">
           <div class="subtitle">
               <img src="./img/jquery.png" alt="jquery.logo">
               <h2 class="title">Dreams Visualization</h2>
               <span class="alias">phtography</span>
           </div>
         </div>
-        <div class="small square" style="top:0;left:624px;width:290px;height:275px;background-image: url('img/port2.jpg');">
+        <div class="small square" style="">
           <div class="subtitle">
               <h2 class="title">time is chronos</h2>
               <span class="alias">phtography | ux design</span>
           </div>
         </div>
-        <div class="small square" style="top:292px;left:624px;width:290px;height:275px;background-image: url('img/port3.png');">
+        <div class="small square" style="">
           <div class="subtitle">
               <h2 class="title">office selection</h2>
               <span class="alias">ux | design</span>

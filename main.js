@@ -31,13 +31,12 @@ function init(){
         let icon = iconbtns[i]
         icon.addEventListener('mousedown',(e)=>{
             var offset = getOffset(e.currentTarget)
-            var top = e.clientY - offset.top + 'px'
+            var top = e.clientY - offset.top + scrollY + 'px'
             var left = e.clientX - offset.left + 'px'
             var mask = icon.querySelector('.mask')
             mask.style.top = top
             mask.style.left = left
             icon.classList.add('active')
-            console.log("iconbutton")
         })
         icon.addEventListener('transitionend',(e)=>{
             icon.classList.remove('active')
