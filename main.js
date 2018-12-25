@@ -1,6 +1,5 @@
 init();
 
-
 function init(){
     prop1.onclick = function() {
         portfolioBar.className = "bar state1"
@@ -11,6 +10,8 @@ function init(){
     prop3.onclick = function() {
         portfolioBar.className = "bar state3"
       }
+    
+    effect()
     window.onscroll = function(){
         if(scrollY > 60){
             topNavBar.classList.add("scroll");
@@ -18,6 +19,23 @@ function init(){
         if(scrollY <= 60){
             topNavBar.classList.remove("scroll");
         }
+       effect() 
+    }
+    function effect(){
+        let datax = document.querySelectorAll('[data-x]');
+        let minIndex = 0;
+        for(let i = 0;i < datax.length;i++){
+            if(Math.abs(datax[i].offsetTop - window.scrollY) < Math.abs(datax[minIndex].offsetTop - window.scrollY)){
+                minIndex = i
+            }
+        }
+        var id = datax[minIndex].id
+        var menu = document.querySelector('a[href="#' + id + '"]').parentNode
+        var active = document.querySelector('nav.menu > ul > li.highlight')
+        if(active)active.classList.remove('highlight')
+        menu.classList.add('highlight')
+
+        datax[minIndex].classList.remove('offset')
     }
     window.onload = function(){
         var time = Math.random()*3000;
@@ -50,5 +68,42 @@ function init(){
             obj = obj.offsetParent
         }
         return offset
+    }
+    var titles = document.querySelectorAll(".topNavBar nav > ul > li > a");
+    for(let i = 0;i < titles.length;i++){
+        var title = titles[i];
+        title.addEventListener("click",(e)=>{
+            e.preventDefault();
+            var top = document.querySelector(e.currentTarget.getAttribute("href")).offsetTop;
+            var targetTop = top - 80;
+            var currentTop = window.scrollY;
+            var coords = { y: currentTop };
+    var tween = new TWEEN.Tween(coords)
+        .to({ y: targetTop }, 500) 
+        .easing(TWEEN.Easing.Quadratic.InOut) 
+        .onUpdate(function() {
+            window.scrollTo(0,coords.y)
+        })
+        .start(); 
+        })
+    }
+    function animate(time) {
+        requestAnimationFrame(animate);
+        TWEEN.update(time);
+    }
+    requestAnimationFrame(animate);
+
+    let liTags = document.querySelectorAll('nav.menu > ul > li')
+    for(let i=0; i<liTags.length; i++){
+      liTags[i].onmouseenter = function(x){
+        x.currentTarget.classList.add('active')
+      }
+      liTags[i].onmouseleave = function(x){
+        x.currentTarget.classList.remove('active')
+      }
+    } 
+    let datax = document.querySelectorAll('[data-x]')
+    for(let i = 0;i< datax.length;i++){
+        datax[i].classList.add('offset')
     }
 }

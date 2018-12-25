@@ -5,19 +5,30 @@ hr{ height:0; border:none; border-top:1px solid rgb(238,238,238); }
 h1,h2,h3,h4,h5,h6{ font-weight:normal; margin:0; }
 li{ list-style:none; }
 .clearfix::after { content: ""; display: block; clear: both; }
-.topNavBar { position: fixed; top: 0; left: 0; width: 100%; color: rgba(255, 255, 255, 0.7); transition:all 0.75s; height:90px;
+.icon { width: 1em; height: 1em; vertical-align: -0.15em; fill: currentColor; overflow: hidden; }
+.mobiNavi{ color:#fff; display:none; float:right; top:0; right:0; }
+.topNavBar { position: fixed; top: 0; left: 0; width: 100%; color: rgba(255, 255, 255, 0.7); transition:all ease-out 0.5s; height:90px;
    display:flex;justify-content: center;align-items: center;}
 .topNavBar.scroll{ color:#000; background-color: #fff; box-shadow: 0px 0px 30px 3px rgba(0,0,0,0.75); z-index:10; height:60px; }
 .topNavBar-inner { width:80%;}
 .topNavBar nav { float: right; }
 .topNavBar nav > ul { list-style: none; margin: 0; padding: 0; }
 .topNavBar nav > ul > li { float: left; margin-left: 35px; position:relative; }
-.topNavBar nav > ul > li > a { font-size: 15px;  text-decoration: none; font-weight: bold; border-top: 3px solid transparent; 
-   border-bottom: 3px solid transparent; padding: 8px 5px; display: block; }
-.topNavBar nav > ul > li > .slider{ position:absolute; bottom:0; left:0; width:1%; border-bottom:3px solid rgb(232, 103, 107); 
-   visibility:hidden; transition:width 0.5s; }
-.topNavBar nav > ul > li > a:hover + .slider { visibility:visible; width:100%; }
-.topNavBar .logo { float: left; font-size: 30px;font-weight:900; font-family: "微软雅黑"; }
+/* .topNavBar nav > ul > li > a { font-size: 15px;  text-decoration: none; font-weight: bold; padding: 8px 5px; display: block; position:relative;padding-bottom:5px;} */
+.topNavBar nav > ul > li > a { font-size: 15px; color: inherit; font-weight: bold; border-top: 3px solid transparent; border-bottom: 3px solid transparent;
+  padding-top: 5px; padding-bottom: 5px; display: block; position: relative;}
+.topNavBar nav > ul > li > a::after{ content:''; display:block; position:absolute; top:100%; left:0; width:100%; border-bottom:3px solid rgb(232, 103, 107); visibility:hidden; }
+.topNavBar nav > ul > li.active > a::after,
+.topNavBar nav > ul > li.highlight > a::after
+ { visibility:visible; animation:sliderIn 0.3s; }
+@keyframes sliderIn{ 0%{width:0%;} 100%{width:100%;} }
+@keyframes sliderOut{ 0%{width:100%;} 100%{width:0%;} }
+.topNavBar .submenu{ display: none; position: absolute; right: 0; top: 100%; background: white; color: #3d4451; box-shadow: 0 0 5px rgba(0,0,0,0.5); }
+.topNavBar li.active> .submenu{ display: block; animation: submenuSlide .3s; }
+@keyframes submenuSlide{ 0%{ margin-right: 100%; } 100%{ margin-right: 0%; } }
+.topNavBar .submenu > li{ white-space: nowrap; padding: 5px 10px; }
+.topNavBar .submenu>li{white-space: nowrap;}
+.topNavBar .logo { float: left; font-size: 30px;font-weight:600; font-family: "微软雅黑"; }
 .topNavBar .logo .rs { color: rgb(232, 103, 107); margin-right: 4px; }
 .topNavBar .logo .card { color: #9a9da2; } 
 .banner { height: 515px; background-image: url(./img/rs-cover.jpg); background-position: center center; background-size: cover; }
@@ -57,8 +68,14 @@ section.skills>ol{ background-color:white; box-shadow: 0 1px 2px 0 rgba(0, 0, 0,
 section.skills>ol>li{ float:left; width:48%; box-sizing:border-box; padding-bottom:35px; }
 section.skills>ol>li:nth-child(even){ float:right; }
 section.skills>ol>li>h3{ font-size: 14px; margin-bottom:5px; }
-section.skills>ol>li .progressBar{ height:5px; border-radius:5px; background-color: #f5cfd1; }
-section.skills>ol>li .progress{ height:100%; width:70%; border-radius:5px; background-color: #e8676b; }
+section.skills>ol>li .progressBar{ height:5px; border-radius:5px; background-color: #f5cfd1; overflow:hidden}
+section.skills>ol>li .progress{ height:100%; width:70%; border-radius:5px; background-color: #e8676b; 
+transform:trnaslateX(0);
+transition:0.5s
+}
+section.skills.offset>ol>li .progress{
+   transform:translateX(-100%);
+}
 section.portfolio{ text-align:center; }
 section.portfolio>nav{ text-align:center; display:inline-block; vertical-align:top; }
 section.portfolio>nav>ol{ display:inline-block; vertical-align:top; }
@@ -93,4 +110,20 @@ footer.media a{ position:relative; overflow: hidden; }
 footer.media .mask{ width:1em; height:1em; display:inline-block; background-color:rgba(255, 255, 255, 0.3); position:absolute; 
    margin-top:-5px; margin-left:-5px; border-radius:50%; transition:transform 0.2s; visibility:hidden; } 
 footer.media a.active .mask{ transform:scale(10); visibility:visible; }
-.icon { width: 1em; height: 1em; vertical-align: -0.15em; fill: currentColor; overflow: hidden; }
+ @media(max-width:930px){
+  .topNavBar{ display:none; }
+  .mobiNavi{ display:block; }
+  section.portfolio>.works .big{margin-left:2.5%;width:95%}
+  section.portfolio>.works .small{top:600px;left:2.5%;width:45%;height:275px;margin:0 auto;}
+  section.portfolio>.works .small:nth-of-type(2){top:600px;left:52.5%;width:45%;height:275px;margin:0 auto;}
+  .userCard .text {margin: 0 auto;width:100%;}
+  .userCard .pictureAndText{display:flex;flex-flow:column nowrap;justify-content: center;align-items:center;}
+  .welcome{display:none !important}
+  .userCard .text{display: flex; flex-flow: column nowrap; justify-content: center; align-items: center;}
+  .userCard .text dl dt{text-align:right}
+  .userCard .text dl dd{width:60%;margin-left:10%;}
+  p.introduction{width:90%}
+  section.skills ol{padding-left:30px;padding-right:30px;}
+ }
+ [data-x].offset{ transform:translateY(200px); }
+ [data-x]{ transform:translateY(0); transition:all 0.3s; }

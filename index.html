@@ -10,25 +10,7 @@
   <link rel="stylesheet" href="./loading.css">
   <script src="//at.alicdn.com/t/font_896846_ww0wepiht6l.js"></script>
   <style type="text/css">
-  .mobiNavi{
-    color:#fff;
-    display:none;
-    float:right;
-    top:0;
-    right:0;
-  }
-  @media(max-width:600px){
-      .topNavBar{
-        display:none;
-      }
-      .mobiNavi{
-        display:block;
-    }
-    section.portfolio>.works .big{margin:0 auto}
-    section.portfolio>.works .small{top:600px;left:0;width:45%;height:275px;margin:0 auto;}
-    section.portfolio>.works .small:nth-of-type(2){top:600px;left:50%;width:45%;height:275px;margin:0 auto;}
-  }
-
+  
 </style>
 </head>
 
@@ -45,14 +27,35 @@
       <a class="logo" href="#" alt="logo">
         <span class="rs">K</span><span class="card">inboy</span>
       </a>
-      <nav>
+      <nav class="menu">
         <ul class="clearfix">
-        <li><a href="javascript:;">关于</a><span class="slider"></span></li>
-        <li><a href="javascript:;">技能</a><span class="slider"></span></li>
-        <li><a href="javascript:;">作品</a><span class="slider"></span></li>
-        <li><a href="http://kinboy.wang">博客</a><span class="slider"></span></li>
-        <li><a href="javascript:;">联系方式</a><span class="slider"></span></li>
-        <li><a href="javascript:;">其他</a><span class="slider"></span></li>
+        <li>
+          <a href="#about">关于</a></li>
+        <li>
+          <a href="#skills">技能</a>
+          <ul class="submenu">
+            <li>技能1</li>
+            <li>技能2</li>
+            <li>技能3</li>
+          </ul>
+        </li>
+        <li>
+          <a href="#works">作品</a>
+          <ul class="submenu">
+            <li>作品1</li>
+            <li>作品2</li>
+            <li>作品3</li>
+          </ul>
+        </li>
+        <li>
+          <a href="https://kinboy.wang">博客</a>
+        </li>
+        <li>
+          <a href="#">联系方式</a>
+        </li>
+        <li>
+          <a href="#">其他</a>
+        </li>
         </ul>
       </nav>
     </div>
@@ -61,7 +64,7 @@
     <div class="mask"></div>
   </div>
   <main>
-    <div class="userCard">
+    <div data-x id="about" class="userCard">
       <div class="pictureAndText clearfix">
         <div class="picture">
         <img src="./img/avatar.jpg"style="width:295;height:318px;" alt="头像">
@@ -131,7 +134,7 @@
       具备一定的项目管理和客户关系经验。
     </p>
   </main>
-    <section class="skills">
+    <section data-x id="skills" class="skills">
       <h2>
         技能
       </h2>
@@ -186,7 +189,7 @@
         </li>
       </ol>
     </section>
-    <section class="portfolio">
+    <section data-x id="works" class="portfolio">
       <h2>作品集</h2>
       <nav>
         <ol class="clearfix">
@@ -221,6 +224,7 @@
         </div>
       </div>
     </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/16.3.5/Tween.min.js"></script>
     <script src="./main.js"></script>
 </body>
 
