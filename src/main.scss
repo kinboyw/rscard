@@ -11,43 +11,156 @@ li{ list-style:none; }
    display:flex;justify-content: center;align-items: center;}
 .topNavBar.scroll{ color:#000; background-color: #fff; box-shadow: 0px 0px 30px 3px rgba(0,0,0,0.75); z-index:10; height:60px; }
 .topNavBar-inner { width:80%;}
-.topNavBar nav { float: right; }
-.topNavBar nav > ul { list-style: none; margin: 0; padding: 0; }
-.topNavBar nav > ul > li { float: left; margin-left: 35px; position:relative; }
-/* .topNavBar nav > ul > li > a { font-size: 15px;  text-decoration: none; font-weight: bold; padding: 8px 5px; display: block; position:relative;padding-bottom:5px;} */
-.topNavBar nav > ul > li > a { font-size: 15px; color: inherit; font-weight: bold; border-top: 3px solid transparent; border-bottom: 3px solid transparent;
-  padding-top: 5px; padding-bottom: 5px; display: block; position: relative;}
-.topNavBar nav > ul > li > a::after{ content:''; display:block; position:absolute; top:100%; left:0; width:100%; border-bottom:3px solid rgb(232, 103, 107); visibility:hidden; }
-.topNavBar nav > ul > li.active > a::after,
-.topNavBar nav > ul > li.highlight > a::after
- { visibility:visible; animation:sliderIn 0.3s; }
+
+.topNavBar nav { 
+  float: right; 
+  
+  ul {
+      list-style: none;
+      margin: 0; 
+      padding: 0; 
+
+      li {
+          float: left;
+          margin-left: 35px; 
+          position:relative;
+
+          a {
+            font-size: 15px; 
+            color: inherit; 
+            font-weight: bold; 
+            border-top: 3px solid transparent; 
+            border-bottom: 3px solid transparent; 
+            padding-top: 5px; 
+            padding-bottom: 5px; 
+            display: block; 
+            position: relative;
+          }
+          a::after{
+            content:'';
+            display:block;
+            position:absolute;
+            top:100%; left:0;
+            width:100%;
+            border-bottom:3px solid rgb(232, 103, 107);
+            visibility:hidden; 
+          }
+        }
+
+          li.active > a::after,
+          li.highlight > a::after{ 
+            visibility:visible;
+            animation:sliderIn 0.3s; 
+          }
+      }
+}
 @keyframes sliderIn{ 0%{width:0%;} 100%{width:100%;} }
 @keyframes sliderOut{ 0%{width:100%;} 100%{width:0%;} }
-.topNavBar .submenu{ display: none; position: absolute; right: 0; top: 100%; background: white; color: #3d4451; box-shadow: 0 0 5px rgba(0,0,0,0.5); }
+
 .topNavBar li.active> .submenu{ display: block; animation: submenuSlide .3s; }
 @keyframes submenuSlide{ 0%{ margin-right: 100%; } 100%{ margin-right: 0%; } }
-.topNavBar .submenu > li{ white-space: nowrap; padding: 5px 10px; }
-.topNavBar .submenu>li{white-space: nowrap;}
-.topNavBar .logo { float: left; font-size: 30px;font-weight:600; font-family: "微软雅黑"; }
-.topNavBar .logo .rs { color: rgb(232, 103, 107); margin-right: 4px; }
-.topNavBar .logo .card { color: #9a9da2; } 
-.banner { height: 515px; background-image: url(./img/rs-cover.jpg); background-position: center center; background-size: cover; }
-.banner .mask { height: 515px; background-color: rgba(44, 51, 64, 0.8); }
-.userCard { max-width: 930px; margin-right: auto; margin-left: auto; background-color: #FFFF; 
-   box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.58); }
-.userCard .welcome { background-color: #e8676b; font-size: 14px; font-weight: 700; line-height: 1.1; display: inline-block; 
-   padding: 7px 12px; position:relative; color:white; }
-.userCard .welcome .triangle { border: 10px solid transparent; width: 0; display:block; border-left-color: #e8676b; 
-   border-top-width: 0px; border-right-width:0px; position:absolute; top:100%; left:7px; }
-.userCard .picture{ float:left; }
-.userCard .text { float:left; margin-left:65px; width:468px; }
-.userCard .text h1{ margin-top:25px; margin-bottom:4px; }
-.userCard .text hr{ margin:22px 0; }
-.userCard .pictureAndText{ padding:60px 50px; }
-.userCard dl dt,
-.userCard dl dd{ float:left; width:50%; padding:5px 0; }
-.userCard dl dt{ width:30%; font-weight:bold; }
-.userCard dl dd{ width:70%; color:#9da0a7; }
+
+.topNavBar .submenu{
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background: white;
+  color: #3d4451;
+  box-shadow: 0 0 5px rgba(0,0,0,0.5);
+  
+   li{
+      white-space: nowrap;
+      padding: 5px 10px;
+    }
+}
+
+.topNavBar .logo {
+  float: left;
+  font-size: 30px;
+  font-weight:600;
+  font-family: "微软雅黑";
+  
+  .rs {
+    color: rgb(232, 103, 107);
+    margin-right: 4px;
+  }
+  .card {
+    color: #9a9da2;
+  } 
+ }
+
+.banner {
+  height: 515px;
+  background-image: url(./img/rs-cover.jpg);
+  background-position: center center;
+  background-size: cover;
+  
+  .mask {
+    height: 515px;
+    background-color: rgba(44, 51, 64, 0.8);
+  }
+}
+
+.userCard {
+  max-width: 930px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #FFFF; 
+  box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.58);
+
+  .welcome {
+    background-color:#e8676b;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.1;
+    display: inline-block; 
+    padding: 7px 12px;
+    position:relative;
+    color:white;
+    
+    .triangle {
+      border: 10px solid transparent;
+      width: 0;
+      display:block;
+      border-left-color: #e8676b; 
+      border-top-width: 0px;
+      border-right-width:0px;
+      position:absolute;
+      top:100%;
+      left:7px;
+    }
+  }
+
+  .picture{
+    float:left;
+  }
+
+  .text {
+    float:left;
+    margin-left:65px;
+    width:468px;
+
+    h1{
+      margin-top:25px;
+      margin-bottom:4px;
+    }
+
+    hr{
+      margin:22px 0;
+    }
+  }
+
+  .pictureAndText{
+    padding:60px 50px;
+  }
+
+  dl dt,
+  dl dd{ float:left; width:50%; padding:5px 0; }
+  dl dt{ width:30%; font-weight:bold; }
+  dl dd{ width:70%; color:#9da0a7; }
+}
+
 .userCard>footer.media{ background-color: #e8676b; text-align: center; }
 .userCard a{ display:inline-block; width:60px; line-height:20px; padding:20px 0; border-radius:50%; margin:16px; }
 .userCard a:hover{ background-color: rgb(208,92,96); }
@@ -123,15 +236,20 @@ footer.media a.active .mask{ transform:scale(10); visibility:visible; }
  }
  [data-x].offset{ transform:translateY(200px); }
  [data-x]{ transform:translateY(0); transition:all 1s; }
-section.message > ol{
-  max-width: 700px;
-  margin: 0 auto;
-  border-top: 1px solid #DDD;
-}
-section.message > ol > li {
-  padding: 16px;
-  border-bottom: 1px solid #DDD;
-}
-section.message > h2{
-   text-align:center;
+
+section.message {
+  ol{
+    max-width: 700px;
+    margin: 0 auto;
+    border-top: 1px solid #DDD;
+
+    li {
+      padding: 16px;
+      border-bottom: 1px solid #DDD;
+     }
+  }
+
+  h2{
+    text-align:center;
+  }
 }
