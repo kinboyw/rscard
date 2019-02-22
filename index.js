@@ -9,5 +9,6 @@ import './js/smooth-scroll'
 import './js/water-button'
 import './js/welcome'
 
-import './loading.scss'
 import './main.scss'
+
+alert(1)
