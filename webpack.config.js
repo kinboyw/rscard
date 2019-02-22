@@ -30,6 +30,15 @@ module.exports = {
       {
         test:/\.(jpe?g|png|gif)$/,
         loader:'url-loader'
+      },
+      {
+        test:/\.(html)$/,
+        use:{
+          loader:'html-loader',
+          options:{
+            attrs:[':data-src']
+          }
+        }
       }
     ]
   }
