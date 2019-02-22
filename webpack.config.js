@@ -2,18 +2,19 @@ const path = require('path');
 
 module.exports = {
   mode: 'development',
-  entry: './src/index.js',
+  entry: './index.js',
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname,'./'),
     filename: 'bundle.js'
   },
   module:{
     rules:[
       {
-        test: /\.css$/,
+        test: /\.scss$/,
         use:[
           'style-loader',
-          'css-loader'
+          'css-loader',
+          'sass-loader'
         ]
       },
       {
@@ -25,6 +26,10 @@ module.exports = {
             presets: ['babel-preset-env']
           }
         }
+      },
+      {
+        test:/\.(jpe?g|png|gif)$/,
+        loader:'url-loader'
       }
     ]
   }
